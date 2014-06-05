@@ -33,10 +33,6 @@ defmodule HexagonTest do
     assert Hexagon.decode_to_list('54686973206973206120746573742e') == 'This is a test.'
   end
 
- test "decodes to a binary from a hex list" do
-    assert Hexagon.decode_to_list('54686973206973206120746573742e') == "This is a test."
-  end
-
   test "converts hex list to an integer" do
     assert Hexagon.to_integer('54686973206973206120746573742e') == 438270661302729020147902120434299950
   end

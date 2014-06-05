@@ -10,23 +10,23 @@ defmodule Hexagon do
 
   ## Examples
 
-      iex> Hex.encode("This is a test.")
+      iex> Hexagon.encode("This is a test.")
       "54686973206973206120746573742e"
 
-      iex> Hex.encode('This is a test.')
+      iex> Hexagon.encode('This is a test.')
       "54686973206973206120746573742e"
 
-      iex> Hex.encode(123456)
+      iex> Hexagon.encode(123456)
       "1e240"
   """
   def encode(str) when is_binary(str) do
     binary_to_hex_list(str)
-    |> iolist_to_binary
+    |> iodata_to_binary
   end
 
   def encode(str) when is_list(str) do
     list_to_hex(str)
-    |> iolist_to_binary
+    |> iodata_to_binary
   end
 
   def encode(int) when is_integer(int) do
@@ -39,13 +39,13 @@ defmodule Hexagon do
 
   ## Examples
 
-      iex> Hex.encode_to_list("This is a test.")
+      iex> Hexagon.encode_to_list("This is a test.")
       '54686973206973206120746573742e'
 
-      iex> Hex.encode_to_list('This is a test.')
+      iex> Hexagon.encode_to_list('This is a test.')
       '54686973206973206120746573742e'
 
-      iex> Hex.encode_to_list(123456)
+      iex> Hexagon.encode_to_list(123456)
       '1e240'
   """
   def encode_to_list(str) when is_binary(str) do
@@ -67,21 +67,21 @@ defmodule Hexagon do
 
   ## Examples
 
-      iex> Hex.decode("54686973206973206120746573742e")
+      iex> Hexagon.decode("54686973206973206120746573742e")
       "This is a test."
 
-      iex> Hex.decode('54686973206973206120746573742e')
+      iex> Hexagon.decode('54686973206973206120746573742e')
       "This is a test."
   """
   def decode(hex_str) when is_binary(hex_str) do
     :binary.bin_to_list(hex_str)
     |> hex_str_to_list
-    |> iolist_to_binary
+    |> iodata_to_binary
   end
 
   def decode(hex_str) when is_list(hex_str) do
     hex_str_to_list(hex_str)
-    |> iolist_to_binary
+    |> iodata_to_binary
   end
 
   @doc """
@@ -90,10 +90,10 @@ defmodule Hexagon do
 
   ## Examples
 
-      iex> Hex.decode_to_list("54686973206973206120746573742e")
+      iex> Hexagon.decode_to_list("54686973206973206120746573742e")
       'This is a test.'
 
-      iex> Hex.decode_to_list('54686973206973206120746573742e')
+      iex> Hexagon.decode_to_list('54686973206973206120746573742e')
       'This is a test.'
   """
   def decode_to_list(hex_str) when is_binary(hex_str) do
@@ -111,10 +111,10 @@ defmodule Hexagon do
 
   ## Examples
 
-      iex> Hex.to_integer('54686973206973206120746573742e')
+      iex> Hexagon.to_integer('54686973206973206120746573742e')
       438270661302729020147902120434299950
 
-      iex> Hex.to_integer("54686973206973206120746573742e")
+      iex> Hexagon.to_integer("54686973206973206120746573742e")
       438270661302729020147902120434299950
   """
   def to_integer(hex_str) when is_list(hex_str) do
