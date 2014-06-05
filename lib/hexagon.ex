@@ -1,4 +1,4 @@
-defmodule Hex do
+defmodule Hexagon do
   @moduledoc """
   A simple module to convert to and from hex encoded strings.
 
