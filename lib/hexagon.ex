@@ -30,7 +30,7 @@ defmodule Hexagon do
   end
 
   def encode(int) when is_integer(int) do
-    integer_to_binary(int, 16)
+    Integer.to_string(int, 16)
     |> String.downcase
   end
 
