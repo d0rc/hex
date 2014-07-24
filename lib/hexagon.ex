@@ -21,12 +21,12 @@ defmodule Hexagon do
   """
   def encode(str) when is_binary(str) do
     binary_to_hex_list(str)
-    |> iodata_to_binary
+    |> IO.iodata_to_binary
   end
 
   def encode(str) when is_list(str) do
     list_to_hex(str)
-    |> iodata_to_binary
+    |> IO.iodata_to_binary
   end
 
   def encode(int) when is_integer(int) do
@@ -76,12 +76,12 @@ defmodule Hexagon do
   def decode(hex_str) when is_binary(hex_str) do
     :binary.bin_to_list(hex_str)
     |> hex_str_to_list
-    |> iodata_to_binary
+    |> IO.iodata_to_binary
   end
 
   def decode(hex_str) when is_list(hex_str) do
     hex_str_to_list(hex_str)
-    |> iodata_to_binary
+    |> IO.iodata_to_binary
   end
 
   @doc """
