@@ -2,7 +2,7 @@ defmodule Hex.Mixfile do
   use Mix.Project
 
   def project do
-    [ app: :hex,
+    [ app: :hexagon,
       version: "0.3.0",
       deps: deps ]
   end
